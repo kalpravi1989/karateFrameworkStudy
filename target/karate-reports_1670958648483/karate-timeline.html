@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/karateRentalApp\/feature\/fetures[1:3]","start":1670958204378,"end":1670958205304,"title":"src\/test\/java\/karateRentalApp\/feature\/fetures[1:3] 13:03:24.378-13:03:25.304 verify the get request"},{"id":2,"group":1,"content":"src\/test\/java\/karateRentalApp\/feature\/fetures[2:8]","start":1670958205311,"end":1670958205532,"title":"src\/test\/java\/karateRentalApp\/feature\/fetures[2:8] 13:03:25.311-13:03:25.532 verify all the get requests"},{"id":3,"group":1,"content":"src\/test\/java\/karateRentalApp\/feature\/fetures[3.1:22]","start":1670958205546,"end":1670958205868,"title":"src\/test\/java\/karateRentalApp\/feature\/fetures[3.1:22] 13:03:25.546-13:03:25.868 verify all the get requests"},{"id":4,"group":1,"content":"src\/test\/java\/karateRentalApp\/feature\/fetures[3.2:23]","start":1670958205874,"end":1670958206103,"title":"src\/test\/java\/karateRentalApp\/feature\/fetures[3.2:23] 13:03:25.874-13:03:26.103 verify all the get requests"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
